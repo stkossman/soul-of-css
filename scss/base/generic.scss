@@ -1,0 +1,33 @@
+@use "variables.scss" as *;
+@use "color-palette.scss" as *;
+
+html, body, pre, code, kbd, samp {
+  font-family: map-get($font-families, 'body');
+}
+
+html {
+  cursor: $cursor-url;
+}
+
+body {
+  font-size: $font-size;
+  color: $base-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+label {
+  cursor: $cursor-url;
+}
+
+a, button {
+  cursor: $cursor-url;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: none;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  outline: 0;
+}

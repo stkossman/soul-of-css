@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <title>Soul Of CSS - CSS Framework</title>
+
+    <link rel="stylesheet" href="/dist/soc.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header class="soc-docs-header">
+    <div class="header-left">
+        <h1 class="soc-text is-primary" style="margin: 0; font-size: 2.5rem; ">Soul of CSS</h1>
+        <p class="soc-text" style="margin: 0; font-size: 1rem; color: #e8e0d0">Dark Souls-style CSS Framework</p>
+    </div>
+    <div class="header-right">
+        <a href="/" target="_blank" class="soc-btn soc-btn--md is-ghost header-github-btn">
+            Github
+        </a>
+    </div>
+</header>
+
+<div class="soc-container-demo">
+    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+        <p class="title">Texts</p>
+        <div class="h3-container">
+            <h3 class="soc-text is-primary">Primary</h3>
+            <h3 class="soc-text is-success">Success</h3>
+            <h3 class="soc-text is-warning">Warning</h3>
+            <h3 class="soc-text is-error">Error</h3>
+            <h3 class="soc-text is-disabled">Disabled</h3>
+        </div>
+
+        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
+        <pre class="soc-code-block"><code>&lt;h3 class="soc-text is-primary"&gt;Primary&lt;/h3&gt;
+&lt;h3 class="soc-text is-success"&gt;Success&lt;/h3&gt;
+&lt;h3 class="soc-text is-warning"&gt;Warning&lt;/h3&gt;
+&lt;h3 class="soc-text is-error"&gt;Error&lt;/h3&gt;
+&lt;h3 class="soc-text is-disabled"&gt;Disabled&lt;/h3&gt;</code></pre>
+    </div>
+
+    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+        <p class="title">Buttons</p>
+        <div class="h3-container">
+            <button class="soc-btn is-primary">Primary</button>
+            <button class="soc-btn is-secondary">Secondary</button>
+            <button class="soc-btn is-ghost">Ghost</button>
+            <button class="soc-btn is-danger">Danger</button>
+            <button class="soc-btn is-success">Success</button>
+        </div>
+
+        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
+        <pre class="soc-code-block"><code>&lt;button class="soc-btn is-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="soc-btn is-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="soc-btn is-ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="soc-btn is-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="soc-btn is-success"&gt;Success&lt;/button&gt;</code></pre>
+    </div>
+
+    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+        <p class="title">Inputs</p>
+
+        <div class="soc-field">
+            <label for="default-input">Enter name</label>
+            <input type="text" id="default-input" class="soc-input is-default" placeholder="Ashen One">
+        </div>
+
+        <div class="soc-field">
+            <label for="success-input">.soc-input.is-success</label>
+            <input type="text" id="success-input" class="soc-input is-success" placeholder="Win">
+        </div>
+
+        <div class="soc-field">
+            <label for="warning-input">.soc-input.is-warning</label>
+            <input type="text" id="warning-input" class="soc-input is-warning" placeholder="Be careful">
+        </div>
+
+        <div class="soc-field">
+            <label for="error-input">.soc-input.is-error</label>
+            <input type="text" id="error-input" class="soc-input is-error" placeholder="Defeat">
+        </div>
+
+        <div class="soc-field">
+            <label for="disabled-input">.soc-input.is-disabled</label>
+            <input type="text" id="disabled-input" class="soc-input is-disabled" placeholder="Untouchable" disabled>
+        </div>
+
+        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
+        <pre class="soc-code-block"><code>&lt;div class="soc-field"&gt;
+    &lt;label for="default-input"&gt;Enter name&lt;/label&gt;
+    &lt;input type="text" id="default-input" class="soc-input is-default" placeholder="Ashen One"&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-field"&gt;
+    &lt;label for="success-input"&gt;.soc-input.is-success&lt;/label&gt;
+    &lt;input type="text" id="success-input" class="soc-input is-success" placeholder="Win"&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-field"&gt;
+    &lt;label for="warning-input"&gt;.soc-input.is-warning&lt;/label&gt;
+    &lt;input type="text" id="warning-input" class="soc-input is-warning" placeholder="Be careful"&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-field"&gt;
+    &lt;label for="error-input"&gt;.soc-input.is-error&lt;/label&gt;
+    &lt;input type="text" id="error-input" class="soc-input is-error" placeholder="Defeat"&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-field"&gt;
+    &lt;label for="disabled-input"&gt;.soc-input.is-disabled&lt;/label&gt;
+    &lt;input type="text" id="disabled-input" class="soc-input is-disabled" placeholder="Untouchable" disabled&gt;
+&lt;/div&gt;</code></pre>
+
+    </div>
+
+    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+        <p class="title">Textarea</p>
+
+        <div class="soc-field">
+            <label for="textarea-example">.soc-textarea</label>
+            <textarea id="textarea-example" class="soc-textarea" placeholder="Write"></textarea>
+        </div>
+
+        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
+        <pre class="soc-code-block"><code>&lt;div class="soc-field"&gt;
+    &lt;label for="textarea-example"&gt;.soc-textarea&lt;/label&gt;
+    &lt;textarea id="textarea-example" class="soc-textarea" placeholder="Write"&gt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+        <p class="title">Containers</p>
+
+        <div class="soc-container with-title is-centered" style="margin-bottom: 1rem; margin-top: 1rem;">
+            <p class="title">Container.is-centered</p>
+            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+        </div>
+
+        <div class="soc-container with-title is-right" style="margin-bottom: 1rem;">
+            <p class="title">Container.is-right</p>
+            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+        </div>
+
+        <div class="soc-container with-title is-gold" style="margin-bottom: 1rem;">
+            <p class="title">Container.is-gold</p>
+            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+        </div>
+
+        <div class="soc-container with-title is-rounded" style="margin-bottom: 1rem;">
+            <p class="title">Container.is-rounded</p>
+            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+        </div>
+
+        <div class="soc-container" style="margin-bottom: 1rem;">
+            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+        </div>
+
+        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
+        <pre class="soc-code-block"><code>&lt;div class="soc-container with-title is-centered"&gt;
+    &lt;p class="title"&gt;Container.is-centered&lt;/p&gt;
+    &lt;p&gt;As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-container with-title is-right"&gt;
+    &lt;p class="title"&gt;Container.is-right&lt;/p&gt;
+    &lt;p&gt;As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-container with-title is-gold"&gt;
+    &lt;p class="title"&gt;Container.is-gold&lt;/p&gt;
+    &lt;p&gt;As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-container with-title is-rounded"&gt;
+    &lt;p class="title"&gt;Container.is-rounded&lt;/p&gt;
+    &lt;p&gt;As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="soc-container"&gt;
+    &lt;p&gt;As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div>
+        <h2 class="soc-text">Big Thanks & Author's Commentary</h2>
+        <p>
+            This framework would not be possible without a <a href="https://nostalgic-css.github.io/NES.css">NES.css</a> since it inspired me to create
+            similar framework but in another style.
+        </p>
+        <p>
+            For now, I did not manage to overcome and do better than <span style="color: #87ceeb;">NES.css</span>,
+            <span style="color: #c0c0c0">(even this page is not that good compared to my other works)</span>
+            but I'll try my best and will be updating this framework until
+            it satisfies me. Maybe it is not perfect nor good because of lack of my knowledge in SCSS, creating frameworks etc., but anyway it worthed a try.
+            <span style="color: #87ceeb;">Also</span>, I know that this framework is not really useful, but I just wanted to create something
+            that would help me <span style="color: #87ceeb;">in first place</span> deal with my depression, and learn something new about CSS and SCSS.
+        </p>
+        <span class="soc-text is-primary">Enjoy!</span>
+    </div>
+</div>
+
+<footer class="soc-docs-footer">
+    ©2025 Soul of CSS - <a href="https://github.com/stkossman">stkossman</a>
+</footer>
+
+</body>
+<script src="scripts.js"></script>
+</html>

@@ -1,0 +1,36 @@
+@use "../base/variables" as *;
+
+@mixin glow-effect($color, $intensity: 0.5) {
+  box-shadow:
+          0 0 10px rgba($color, $intensity),
+          0 0 20px rgba($color, $intensity * 0.7),
+          0 0 30px rgba($color, $intensity * 0.4);
+}
+
+@mixin ancient-border($color-gold) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg,
+            $color-gold 0%,
+            transparent 25%,
+            transparent 75%,
+            $color-gold 100%);
+    z-index: -1;
+    border-radius: inherit;
+  }
+}
+
+@mixin rounded-corners($radius: 8px) {
+  @if $radius == circle {
+    border-radius: 50%;
+  } @else {
+    border-radius: $radius;
+  }
+}

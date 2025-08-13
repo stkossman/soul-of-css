@@ -1,0 +1,88 @@
+@use "../base/variables.scss" as *;
+@use "../base/color-palette.scss" as *;
+@use "../base/functions" as *;
+@use "../mixins/mixins.scss" as *;
+
+.soc-input,
+.soc-textarea {
+  @mixin border-style($border, $outline) {
+    border: $border-size solid $border;
+    outline: 1px solid transparent;
+    outline-color: $outline;
+  }
+
+  @include rounded-corners(6px);
+
+  width: calc(100% - #{2 * $border-size});
+  padding: 0.5rem 1rem;
+  margin: 4px;
+  background-clip: padding-box;
+  font-family: map-get($font-families, 'body');
+  font-size: $font-size;
+
+  background-color: $background-color;
+  color: $color-bone-white;
+
+  &.is-default {
+    @include border-style(map-get($default-colors, "normal"), map-get($default-colors, "hover"));
+  }
+
+  &.is-success {
+    @include border-style(map-get($success-colors, "normal"), map-get($success-colors, "hover"));
+  }
+
+  &.is-warning {
+    @include border-style(map-get($warning-colors, "normal"), map-get($warning-colors, "hover"));
+  }
+
+  &.is-error {
+    @include border-style(map-get($error-colors, "normal"), map-get($error-colors, "hover"));
+  }
+
+  &.is-disabled {
+    @include border-style(map-get($disabled-colors, "normal"), map-get($disabled-colors, "shadow"));
+    background-color: lighten($background-color, 5%);
+    color: map-get($disabled-colors, "normal");
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    @include glow-effect($base-color, 0.4);
+  }
+
+  &:hover:not(.is-disabled) {
+    transform: translateY(-1px);
+  }
+}
+
+.soc-field {
+  > label {
+    display: block;
+    font-family: map-get($font-families, 'primary');
+    margin-bottom: 0.5rem;
+  }
+
+  .soc-input,
+  .soc-textarea {
+    display: block;
+  }
+
+  &.is-inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    > label {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: right;
+      margin: 0;
+    }
+
+    .soc-input,
+    .soc-textarea {
+      flex-basis: 0;
+      flex-grow: 5;
+    }
+  }
+}

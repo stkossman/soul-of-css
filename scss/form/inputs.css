@@ -1,0 +1,87 @@
+.soc-input,
+.soc-textarea {
+  border-radius: 6px;
+  width: calc(100% - 6px);
+  padding: 0.5rem 1rem;
+  margin: 4px;
+  background-clip: padding-box;
+  font-family: "Spectral", "Times New Roman", serif;
+  font-size: 16px;
+  background-color: #0a0a0a;
+  color: #0d0d0d;
+}
+.soc-input.is-default,
+.soc-textarea.is-default {
+  border: 3px solid #0a0a0a;
+  outline: 2px solid transparent;
+  outline-color: #3a3a3a;
+  transition: all 0.2s ease-in-out;
+}
+.soc-input.is-success,
+.soc-textarea.is-success {
+  border: 3px solid #228b22;
+  outline: 2px solid transparent;
+  outline-color: rgb(42.0184971098, 171.7815028902, 42.0184971098);
+  transition: all 0.2s ease-in-out;
+}
+.soc-input.is-warning,
+.soc-textarea.is-warning {
+  border: 3px solid #ff4500;
+  outline: 2px solid transparent;
+  outline-color: rgb(255, 98.76, 40.8);
+  transition: all 0.2s ease-in-out;
+}
+.soc-input.is-error,
+.soc-textarea.is-error {
+  border: 3px solid #8b0000;
+  outline: 2px solid transparent;
+  outline-color: rgb(179.8, 0, 0);
+  transition: all 0.2s ease-in-out;
+}
+.soc-input.is-disabled,
+.soc-textarea.is-disabled {
+  border: 3px solid #1a1a1a;
+  outline: 2px solid transparent;
+  outline-color: #3a3a3a;
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(22.75, 22.75, 22.75);
+  color: #1a1a1a;
+  cursor: not-allowed;
+}
+.soc-input:focus,
+.soc-textarea:focus {
+  outline-offset: 2px;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.4), 0 0 20px rgba(13, 13, 13, 0.28), 0 0 30px rgba(13, 13, 13, 0.16);
+}
+.soc-input:hover:not(.is-disabled),
+.soc-textarea:hover:not(.is-disabled) {
+  transform: translateY(-1px);
+}
+
+.soc-field > label {
+  display: block;
+  font-family: "Cinzel", "Times New Roman", serif;
+  margin-bottom: 0.5rem;
+}
+.soc-field .soc-input,
+.soc-field .soc-textarea {
+  display: block;
+}
+.soc-field.is-inline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.soc-field.is-inline > label {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: right;
+  margin: 0;
+}
+.soc-field.is-inline .soc-input,
+.soc-field.is-inline .soc-textarea {
+  flex-basis: 0;
+  flex-grow: 5;
+}
+
+/*# sourceMappingURL=inputs.css.map */

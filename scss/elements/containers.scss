@@ -1,0 +1,71 @@
+@use "../base/variables.scss" as *;
+@use "../base/color-palette.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.soc-container {
+  position: relative;
+  padding: 1.5rem 2rem;
+  border: $border-size solid $color-bone-white;
+  background-color: transparent;
+  color: $color-bone-white;
+  font-family: map-get($font-families, 'body');
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  &.is-centered {
+    text-align: center;
+  }
+
+  &.is-right {
+    text-align: right;
+  }
+
+  &.with-title {
+    > .title {
+      display: inline-block;
+      position: absolute;
+      top: -1rem;
+      left: 1rem;
+      padding: 0 0.5rem;
+      font-size: 1rem;
+      font-family: map-get($font-families, 'primary');
+      background-color: $color-charcoal;
+      color: $color-bone-white;
+    }
+  }
+
+  &.is-gold {
+    border-color: $color-gold;
+    color: $color-gold;
+
+    &.with-title {
+      > .title {
+        color: $color-gold;
+        background-color: $color-charcoal;
+      }
+    }
+  }
+
+  &.is-rounded {
+    @include rounded-corners();
+    padding: 1rem 1.5rem;
+
+    &.with-title {
+      > .title {
+        top: -0.8rem;
+      }
+    }
+
+    &.is-gold {
+    border-color: $color-gold;
+
+      &.with-title {
+        > .title {
+          color: $color-gold;
+        }
+      }
+    }
+  }
+}

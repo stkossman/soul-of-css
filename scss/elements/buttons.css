@@ -1,0 +1,58 @@
+.soc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cinzel", "Times New Roman", serif;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-width: 3px;
+  border-style: solid;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  cursor: url("/assets/dark-souls-cursor.cur"), auto;
+  user-select: none;
+}
+.soc-btn:disabled, .soc-btn.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.soc-btn.is-primary {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-color: #ffd700;
+  color: #f4f1e8;
+}
+.soc-btn.is-primary:hover {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+  box-shadow: 0 0 0.6 0 #ffd700;
+  transform: translateY(-2px);
+  border-color: rgb(255, 219, 25.5);
+}
+.soc-btn.is-secondary {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+  color: #f4f1e8;
+}
+.soc-btn.is-secondary:hover {
+  background: #1a1a1a;
+  border-color: #f4f1e8;
+  box-shadow: 0 0 0.3 0 #f4f1e8;
+  color: #ffd700;
+}
+.soc-btn.is-ghost {
+  background: rgba(244, 241, 232, 0.1);
+  color: #f4f1e8;
+  border: 1px solid rgba(244, 241, 232, 0.3);
+  backdrop-filter: blur(10px);
+}
+.soc-btn.is-ghost:hover {
+  background: rgba(244, 241, 232, 0.2);
+  border-color: #f4f1e8;
+  box-shadow: 0 0 0.4 0 #f4f1e8;
+}
+.soc-btn.is-ghost:active {
+  background: rgba(244, 241, 232, 0.3);
+}
+
+/*# sourceMappingURL=buttons.css.map */

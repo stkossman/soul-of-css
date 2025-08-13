@@ -1,0 +1,152 @@
+@use "../base/variables.scss" as *;
+@use "../base/color-palette.scss" as *;
+@use "../base/functions" as *;
+@use "../mixins/mixins.scss" as *;
+
+$button-sizes: (
+  'sm': (
+          'padding': spacing('sm') spacing('md'),
+          'font-size': 0.875rem,
+          'min-height': 2rem
+  ),
+  'md': (
+          'padding': spacing('md') spacing('lg'),
+          'font-size': 1rem,
+          'min-height': 2.5rem
+  ),
+  'lg': (
+          'padding': spacing('lg') spacing('xl'),
+          'font-size': 1.125rem,
+          'min-height': 3rem
+  ),
+  'xl': (
+          'padding': spacing('xl') spacing('xxl'),
+          'font-size': 1.25rem,
+          'min-height': 3.5rem
+  )
+);
+
+.soc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: map-get($font-families, 'primary');
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-width: $border-size;
+  border-style: solid;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  cursor: $cursor-url;
+  user-select: none;
+
+  // sizes
+  @each $size, $properties in $button-sizes {
+    &--#{$size} {
+      padding: map-get($properties, 'padding');
+      font-size: map-get($properties, 'font-size');
+      min-height: map-get($properties, 'min-height');
+    }
+  }
+  // default size
+  &:not([class*="--"]) {
+    padding: map-get(map-get($button-sizes, 'md'), 'padding');
+    font-size: map-get(map-get($button-sizes, 'md'), 'font-size');
+    min-height: map-get(map-get($button-sizes, 'md'), 'min-height');
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  // primary
+  &.is-primary {
+    background: linear-gradient(135deg, $color-void-black 0%, $color-charcoal 100%);
+    color: $color-bone-white;
+    border: 2px solid $color-gold;
+    border-radius: radius('md');
+    @include ancient-border($color-gold);
+
+    &:hover {
+      background: linear-gradient(135deg, $color-charcoal 0%, $color-ash-gray 100%);
+      @include glow-effect($color-gold, 0.6);
+      border-color: lighten-color($color-gold, 10%);
+    }
+
+    &:active {
+      @include glow-effect($color-gold, 0.3);
+    }
+  }
+
+  // secondary
+  &.is-secondary {
+    background: $color-void-black;
+    border-color: $color-charcoal;
+    color: $color-bone-white;
+
+    &:hover {
+      background: $color-void-black;
+      border-color: $color-bone-white;
+      @include glow-effect($color-bone-white, 0.3);
+      color: $color-gold;
+    }
+
+    &:active {
+      background: $color-charcoal;
+    }
+  }
+
+  // danger
+  &.is-danger {
+    background: rgba($color-blood-red, 0.3);
+    color: $color-bone-white;
+    border: 2px solid $color-blood-red;
+
+    &:hover {
+      background: rgba($color-blood-red, 0.4);
+      @include glow-effect($color-crimson, 0.7);
+    }
+
+    &:active {
+      background: rgba($color-blood-red, 0.7);
+    }
+  }
+
+  // success
+  &.is-success {
+    background: rgba($color-poison-green, 0.3);
+    color: $color-bone-white;
+    border: 2px solid $color-poison-green;
+
+    &:hover {
+      background: rgba($color-poison-green, 0.4);
+      @include glow-effect($color-poison-green, 0.7);
+    }
+
+    &:active {
+      background: rgba($color-poison-green, 0.7);
+    }
+  }
+
+  // ghost
+  &.is-ghost {
+    background: rgba($color-bone-white, 0.1);
+    color: $color-bone-white;
+    border: 1px solid rgba($color-bone-white, 0.3);
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: rgba($color-bone-white, 0.2);
+      border-color: $color-bone-white;
+      @include glow-effect($color-bone-white, 0.4);
+    }
+
+    &:active {
+      background: rgba($color-bone-white, 0.3);
+    }
+  }
+}

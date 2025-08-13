@@ -1,0 +1,10 @@
+.idea
+src/
+node_modules/
+*.map
+*.scss
+.gitignore
+
+docs
+index.html
+styles.css

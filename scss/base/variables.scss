@@ -1,0 +1,77 @@
+@use "color-palette.scss" as *;
+
+// font
+$font-families: (
+  'primary': ('Cinzel', 'Times New Roman', serif),
+  'secondary': ('Crimson Text', 'Georgia', serif),
+  'accent': ('Uncial Antiqua', 'Papyrus', fantasy),
+  'body': ('Spectral', 'Times New Roman', serif)
+);
+$font-size: 16px !default;
+
+$base-color: $color-black !default;
+$background-color: $color-shadow-black !default;
+
+$cursor-url: url('../../assets/dark-souls-cursor.cur'), auto !default;
+
+$border-size: 3px !default;
+
+$border-radius: (
+  'none': 0,
+  'sm': 2px,
+  'md': 4px,
+  'lg': 8px,
+  'full': 50%
+);
+
+$spacing: (
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 1rem,
+  'lg': 1.5rem,
+  'xl': 2rem,
+  'xxl': 3rem
+);
+
+// color sets
+$default-colors: (
+  normal: $background-color,
+  hover: $color-ash-gray,
+  shadow: $color-charcoal
+) !default;
+
+$primary-colors: (
+  normal: $color-gold,
+  hover: $color-ember-orange,
+  shadow: $color-void-black
+) !default;
+
+$success-colors: (
+  normal: $color-success,
+  hover: lighten($color-success, 8%),
+  shadow: darken($color-success, 15%)
+) !default;
+
+$warning-colors: (
+  normal: $color-warning,
+  hover: lighten($color-warning, 8%),
+  shadow: darken($color-warning, 15%)
+) !default;
+
+$error-colors: (
+  normal: $color-danger,
+  hover: lighten($color-danger, 8%),
+  shadow: darken($color-danger, 15%)
+) !default;
+
+$info-colors: (
+  normal: $color-soul-blue,
+  hover: $color-frost-blue,
+  shadow: $color-arcane-purple
+) !default;
+
+$disabled-colors: (
+  normal: $color-void-black,
+  hover: $color-parchment,
+  shadow: $color-ash-gray
+) !default;

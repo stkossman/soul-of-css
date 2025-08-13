@@ -1,0 +1,17 @@
+@use "variables" as *;
+
+@function darken-color($color, $amount: 10%) {
+  @return darken($color, $amount);
+}
+
+@function lighten-color($color, $amount: 10%) {
+  @return lighten($color, $amount);
+}
+
+@function radius($size) {
+  @return map-get($border-radius, $size);
+}
+
+@function spacing($size) {
+  @return map-get($spacing, $size);
+}

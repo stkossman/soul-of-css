@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&family=Spectral:wght@400;500;600&family=Uncial+Antiqua&display=swap);
+
+body {
+    background-color: #2a2a2a;
+    cursor: url("../assets/dark-souls-cursor.cur"), auto;
+}
+
+a {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: #f4f1e8;
+}
+
+.soc-docs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid #3a3a3a;
+    background-color: #1a1a1a;
+    font-family: 'Cinzel', serif;
+    top: 0;
+    z-index: 1000;
+}
+
+.soc-docs-header .header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-right .header-github-btn {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.soc-docs-footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 4px solid #3a3a3a;
+    background-color: #1a1a1a;
+    color: #e8e0d0;
+    font-size: 0.875rem;
+    margin-top: 2rem;
+}
+
+.soc-container-demo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.h3-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.h3-container h3 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.soc-code-toggle {
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.show-code-btn {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    cursor: pointer;
+}
+
+.soc-code-block {
+    display: none;
+    background-color: #1a1a1a;
+    color: #e8e0d0;
+    padding: 1rem;
+    border: 2px solid #3a3a3a;
+    margin-top: 0.5rem;
+    overflow-x: auto;
+    font-size: 0.85rem;
+}
+
+.soc-code-block code {
+    font-family: monospace;
+}

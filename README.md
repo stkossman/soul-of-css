@@ -57,4 +57,4 @@ Soul of CSS is compatible with:
 Rest of the browsers are not tested, but should work.
 
 ## Development
-I do not ask any help or contributions. However, if you want to help me or contribute, you can contact me via my e-mail ony github profile.
+I do not ask any help or contributions. However, if you want to help me or contribute, please share this project with your friends and colleagues.

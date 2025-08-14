@@ -24,6 +24,11 @@ npm install soul-of-css
 </html>
 ```
 
+##### via CDN
+```html
+<link href="https://unpkg.com/soul-of-css@latest/dist/soc.css"  rel="stylesheet"/>
+```
+
 ##### SASS, SCSS...
 ```scss
 @import "./node_modules/soul-of-css/dist/soc.css"

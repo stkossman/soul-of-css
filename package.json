@@ -3,7 +3,7 @@
     "sass": "^1.90.0"
   },
   "name": "soul-of-css",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Soul of CSS is a CSS framework inspired by the aesthetics of Souls-like games.",
   "main": "dist/soc.css",
   "dependencies": {
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/stkossman/soul-of-css.git"
   },
   "keywords": ["css", "scss", "framework", "dark souls", "dark fantasy", "souls-like"],
   "author": "stkossman (https://github.com/stkossman)",

@@ -41,7 +41,7 @@ $default-colors: (
 ) !default;
 
 $primary-colors: (
-  normal: $color-gold,
+  normal: $color-brass,
   hover: $color-ember-orange,
   shadow: $color-void-black
 ) !default;
@@ -75,3 +75,13 @@ $disabled-colors: (
   hover: $color-parchment,
   shadow: $color-ash-gray
 ) !default;
+
+$legacy-colors: (
+  ember: $color-ember,
+  bonfire: $color-bonfire,
+  heir: $color-heir,
+  death: $color-death,
+  progress: $color-progress,
+  button: $color-brass,
+  button-hover: $color-button-hover
+)

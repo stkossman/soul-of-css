@@ -1,0 +1,29 @@
+@use "../base/variables.scss" as *;
+@use "../base/color-palette.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.soc-list {
+  list-style: none;
+  padding-left: 1.5rem;
+
+  li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    color: $color-bone-white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #e7e9fc;
+      border-color: $color-frost-blue;
+      box-shadow: 0 0 6px rgba($color-frost-blue, 0.8);
+    }
+  }
+}

@@ -36,13 +36,13 @@
     }
   }
 
-  &.is-gold {
-    border-color: $color-gold;
-    color: $color-gold;
+  &.is-brass {
+    border-color: $color-brass;
+    color: $color-brass;
 
     &.with-title {
       > .title {
-        color: $color-gold;
+        color: $color-brass;
         background-color: $color-charcoal;
       }
     }
@@ -59,11 +59,11 @@
     }
 
     &.is-gold {
-    border-color: $color-gold;
+    border-color: $color-brass;
 
       &.with-title {
         > .title {
-          color: $color-gold;
+          color: $color-brass;
         }
       }
     }

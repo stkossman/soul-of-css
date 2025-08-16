@@ -67,18 +67,18 @@ $button-sizes: (
   &.is-primary {
     background: linear-gradient(135deg, $color-void-black 0%, $color-charcoal 100%);
     color: $color-bone-white;
-    border: 2px solid $color-gold;
+    border: 2px solid $color-brass;
     border-radius: radius('md');
-    @include ancient-border($color-gold);
+    @include ancient-border($color-brass);
 
     &:hover {
       background: linear-gradient(135deg, $color-charcoal 0%, $color-ash-gray 100%);
-      @include glow-effect($color-gold, 0.6);
-      border-color: lighten-color($color-gold, 10%);
+      @include glow-effect($color-brass, 0.6);
+      border-color: lighten-color($color-brass, 10%);
     }
 
     &:active {
-      @include glow-effect($color-gold, 0.3);
+      @include glow-effect($color-brass, 0.3);
     }
   }
 
@@ -92,7 +92,7 @@ $button-sizes: (
       background: $color-void-black;
       border-color: $color-bone-white;
       @include glow-effect($color-bone-white, 0.3);
-      color: $color-gold;
+      color: $color-brass;
     }
 
     &:active {
@@ -148,5 +148,44 @@ $button-sizes: (
     &:active {
       background: rgba($color-bone-white, 0.3);
     }
+  }
+}
+
+.soc-btn.is-legacy {
+  background: transparent;
+  color: $color-bone-white;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 4px solid $color-brass;
+  border-radius: 4px;
+  padding: 4px 4rem;
+  position: relative;
+  transition: all 0.25s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid rgba($color-brass, 0.7);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  &:hover {
+    @include glow-effect($color-button-hover, 0.8);
+    border-color: rgba($color-button-hover, 0.6);
+
+    box-shadow: inset 0 0 10px rgba($color-button-hover, 0.5),
+    inset 0 0 15px rgba($color-button-hover, 0.3),
+    0 0 12px rgba($color-button-hover, 0.7);
+  }
+
+  &:active {
+    box-shadow: inset 0 0 10px rgba($color-button-hover, 0.9),
+    inset 0 0 20px rgba($color-button-hover, 0.4);
   }
 }

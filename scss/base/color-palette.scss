@@ -17,8 +17,17 @@ $color-soul-blue: #4169e1;
 $color-frost-blue: #87ceeb;
 $color-poison-green: #228b22;
 $color-arcane-purple: #6a0dad;
-$color-gold: #ffd700;
+//$color-gold: #ffd700;
+$color-brass: #927548;
 $color-silver: #c0c0c0;
+
+// legacy colors
+$color-ember: #f94b10; // "ember restored" text color
+$color-bonfire: #fecb53; // "bonfire" text color
+$color-heir: #fdf366; // "heir of fire destroyed" text color
+$color-death: #5d0d0c; // "you died" text color
+$color-progress: #422c00; // progress bar color
+$color-button-hover: #a2551b; // button hover color
 
 // state colors
 $color-danger: $color-blood-red;

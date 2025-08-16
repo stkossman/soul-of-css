@@ -1,24 +1,32 @@
 @use "../base/variables.scss" as *;
 @use "../base/color-palette.scss" as *;
+@use "../mixins/mixins.scss" as *;
 
 .soc-text {
-  &.is-primary {
-    color: map-get($primary-colors, "normal");
-  }
+  // base
+  &.is-primary { color: map-get($primary-colors, "normal"); }
+  &.is-success { color: map-get($success-colors, "normal"); }
+  &.is-warning { color: map-get($warning-colors, "normal"); }
+  &.is-error { color: map-get($error-colors, "normal"); }
+  &.is-disabled { color: map-get($disabled-colors, "normal");}
 
-  &.is-success {
-    color: map-get($success-colors, "normal");
+  // legacy
+  &.is-ember {
+    color: map-get($legacy-colors, "ember");
+    @include glow-text(map-get($legacy-colors, "ember"), 0.8);
   }
-
-  &.is-warning {
-    color: map-get($warning-colors, "normal");
+  &.is-bonfire {
+    color: map-get($legacy-colors, "bonfire");
+    @include glow-text(map-get($legacy-colors, "bonfire"), 0.8);
   }
-
-  &.is-error {
-    color: map-get($error-colors, "normal");
+  &.is-heir {
+    color: map-get($legacy-colors, "heir");
+    @include glow-text(map-get($legacy-colors, "heir"), 0.8);
   }
-
-  &.is-disabled {
-    color: map-get($disabled-colors, "normal");
+  &.is-death {
+    color: map-get($legacy-colors, "death");
+    @include glow-text(map-get($legacy-colors, "death"), 0.8);
   }
+  &.is-progress { color: map-get($legacy-colors, "progress"); }
+  &.is-button { color: map-get($legacy-colors, "button"); }
 }

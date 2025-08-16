@@ -1,0 +1,24 @@
+.soc-list {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+.soc-list li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  color: #87ceeb;
+}
+.soc-list li::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #87ceeb;
+  box-shadow: 0 0 6px rgba(135, 206, 235, 0.8);
+}
+
+/*# sourceMappingURL=lists.css.map */

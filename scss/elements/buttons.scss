@@ -37,9 +37,13 @@ $button-sizes: (
   border-style: solid;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: $cursor-url;
   user-select: none;
+
+  &:active {
+    transform: scale(0.97);
+  }
 
   // sizes
   @each $size, $properties in $button-sizes {
@@ -69,7 +73,7 @@ $button-sizes: (
     color: $color-bone-white;
     border: 2px solid $color-brass;
     border-radius: radius('md');
-    @include ancient-border($color-brass);
+    //@include ancient-border($color-brass);
 
     &:hover {
       background: linear-gradient(135deg, $color-charcoal 0%, $color-ash-gray 100%);
@@ -161,7 +165,7 @@ $button-sizes: (
   border-radius: 4px;
   padding: 4px 4rem;
   position: relative;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 
   &::before {
     content: "";

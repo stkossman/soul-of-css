@@ -8,7 +8,11 @@
   &.is-success { color: map-get($success-colors, "normal"); }
   &.is-warning { color: map-get($warning-colors, "normal"); }
   &.is-error { color: map-get($error-colors, "normal"); }
-  &.is-disabled { color: map-get($disabled-colors, "normal");}
+  &.is-disabled { color: map-get($disabled-colors, "normal"); cursor: not-allowed; opacity: 0.7;}
+
+  &.is-soul {
+    color: map-get($info-colors, "normal");
+  }
 
   // legacy
   &.is-ember {

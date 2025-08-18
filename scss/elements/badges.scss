@@ -1,0 +1,84 @@
+@use "../base/variables.scss" as *;
+@use "../base/color-palette.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.soc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: spacing('xs') spacing('sm');
+  font-family: map-get($font-families, 'secondary');
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid $color-border;
+  border-radius: radius('sm');
+  background: $color-shadow-black;
+  color: $color-bone-white;
+  user-select: none;
+  line-height: 1;
+  transition: all 0.2s ease;
+
+  &--sm { font-size: 0.65rem; padding: spacing('xs') spacing('sm'); }
+  &--md { font-size: 0.75rem; padding: spacing('sm') spacing('md'); }
+  &--lg { font-size: 0.875rem; padding: spacing('sm') spacing('lg'); }
+
+  // base
+  &.is-primary {
+    background: map-get($primary-colors, normal);
+    border-color: darken(map-get($primary-colors, shadow), 10%);
+    color: $color-void-black;
+  }
+
+  &.is-success {
+    background: map-get($success-colors, normal);
+    border-color: map-get($success-colors, shadow);
+    color: $color-bone-white;
+  }
+
+  &.is-warning {
+    background: map-get($warning-colors, normal);
+    border-color: map-get($warning-colors, shadow);
+    color: $color-bone-white;
+  }
+
+  &.is-error {
+    background: map-get($error-colors, normal);
+    border-color: map-get($error-colors, shadow);
+    color: $color-bone-white;
+  }
+
+  &.is-info {
+    background: map-get($info-colors, normal);
+    border-color: map-get($info-colors, shadow);
+    color: $color-bone-white;
+  }
+
+  &.is-disabled {
+    background: map-get($disabled-colors, normal);
+    border-color: $color-charcoal;
+    color: $color-ash-gray;
+    opacity: 0.6;
+    filter: grayscale(100%);
+  }
+
+  // legacy
+  &.is-ember {
+    background: rgba($color-ember, 0.2);
+    border: 1px solid $color-ember;
+    color: $color-ember;
+  }
+
+  &.is-bonfire {
+    background: rgba($color-bonfire, 0.2);
+    border: 1px solid $color-bonfire;
+    color: $color-bonfire;
+  }
+
+  &.is-death {
+    background: rgba($color-death, 0.3);
+    border: 1px solid $color-death;
+    color: $color-crimson;
+  }
+}

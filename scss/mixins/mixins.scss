@@ -14,7 +14,7 @@
     0 0 20px rgba($color, $intensity * 0.5);
 }
 
-@mixin ancient-border($color-gold) {
+@mixin ancient-border($color-brass) {
   position: relative;
 
   &::before {
@@ -25,10 +25,10 @@
     right: -2px;
     bottom: -2px;
     background: linear-gradient(45deg,
-            $color-gold 0%,
+            $color-brass 0%,
             transparent 25%,
             transparent 75%,
-            $color-gold 100%);
+            $color-brass 100%);
     z-index: -1;
     border-radius: inherit;
   }
@@ -41,3 +41,43 @@
     border-radius: $radius;
   }
 }
+
+@mixin flicker-animation() {
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 60%, 62%, 100% { opacity: 1; }
+  20%, 61% { opacity: 0.7; }
+}
+
+.is-flicker {
+  @include flicker-animation();
+}
+
+@mixin ghostly-flicker() {
+  animation: ghostly-flicker 4s infinite;
+}
+
+@keyframes ghostly-flicker {
+  0%, 15%, 25%, 35%, 50%, 65%, 75%, 85%, 100% { opacity: 0.8; }
+  20%, 30%, 60%, 70%, 90% { opacity: 0.3; }
+}
+
+.is-ghostly {
+  @include ghostly-flicker();
+}
+
+@mixin whispering-shadows() {
+  animation: whispering-shadows 4s infinite ease-in-out;
+}
+
+@keyframes whispering-shadows {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(70, 0, 70, 0.3); }
+}
+
+.is-whispering-shadow {
+  @include whispering-shadows();
+}
+

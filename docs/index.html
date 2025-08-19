@@ -20,8 +20,14 @@
             <p class="soc-text" style="margin: 0; font-size: 1rem; color: #e8e0d0; font-style: italic;">Dark Souls-style CSS Framework</p>
         </div>
         <nav class="soc-docs-nav">
-            <a href="index.html" class="soc-btn soc-btn--sm is-ghost">Home</a>
-            <a href="components.html" class="soc-btn soc-btn--sm is-ghost">Components</a>
+            <a
+               hx-get="index.html" hx-select="main" hx-target="#main-content" hx-push-url="true"
+               class="soc-btn soc-btn--sm is-ghost" style="color: #f4f1e8;">Home
+            </a>
+            <a
+               hx-get="components.html" hx-target="#main-content" hx-push-url="true"
+               class="soc-btn soc-btn--sm is-ghost" style="color: #f4f1e8;">Components
+            </a>
             <a href="https://github.com/stkossman/soul-of-css" target="_blank" class="soc-btn soc-btn--sm is-ghost">
                 GitHub
             </a>
@@ -29,13 +35,21 @@
     </div>
 </header>
 
-<main>
+<div id="loading-indicator" class="soc-text is-bonfire"
+     hx-indicator style="display:none; position:fixed; top:1rem; right:1rem; z-index:999;">
+    Loading...
+</div>
+
+<main id="main-content" hx-target="this" hx-swap="innerHTML">
     <div class="soc-hero">
         <div class="soc-hero-content">
             <h2 class="soc-text is-bonfire is-ghostly">BONFIRE LIT</h2>
             <p class="soc-text">A CSS framework forged in the fires of Lordran</p>
             <div class="soc-hero-buttons">
-                <a href="components.html" class="soc-btn is-secondary">View Components</a>
+                <a
+                    hx-get="components.html" hx-target="#main-content" hx-push-url="true"
+                    class="soc-btn is-secondary" style="color: #f4f1e8;">Begin Your Journey
+                </a>
             </div>
         </div>
     </div>
@@ -47,7 +61,10 @@
             <p>Or install via npm:</p>
             <pre class="soc-code-block" style="display: block"><code>npm install soul-of-css</code></pre>
             <div class="soc-quick-start-actions">
-                <a href="components.html" class="soc-btn is-legacy">View Components</a>
+                <a
+                    hx-get="components.html" hx-target="#main-content" hx-push-url="true"
+                    class="soc-btn is-legacy" style="color: #f4f1e8;">View Components
+                </a>
             </div>
         </div>
     </div>
@@ -75,5 +92,6 @@
 </footer>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"></script>
 <script src="scripts.js"></script>
 </html>

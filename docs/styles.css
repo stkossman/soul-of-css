@@ -69,7 +69,7 @@ a {
 
 .soc-hero {
     background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)),
-    url('/assets/dark-souls-bg.jpg') no-repeat center center;
+    url('../assets/dark-souls-bg.jpg') no-repeat center center;
     background-size: cover;
     min-height: 60vh;
     display: flex;

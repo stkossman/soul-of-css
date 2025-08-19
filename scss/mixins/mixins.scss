@@ -77,7 +77,7 @@
   50% { box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(70, 0, 70, 0.3); }
 }
 
-.is-whispering-shadow {
+.is-whispering {
   @include whispering-shadows();
 }
 

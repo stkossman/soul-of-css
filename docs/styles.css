@@ -21,7 +21,6 @@ a {
 }
 
 .soc-docs-header {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
@@ -35,9 +34,18 @@ a {
     box-shadow: 0 4px 20px var(--shadow-dark);
 }
 
+.soc-docs-header > .container {
+    display: flex;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
 .soc-docs-header .header-left {
     display: flex;
     flex-direction: column;
+    margin-right: auto;
 }
 
 .header-left h1 {
@@ -48,8 +56,70 @@ a {
     text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
-.header-right .header-github-btn {
-    display: inline-block;
+.soc-docs-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.soc-docs-nav a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.soc-hero {
+    background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)),
+    url('/assets/dark-souls-bg.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 3px solid var(--brass);
+}
+
+.soc-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.soc-hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.soc-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #e8e0d0;
+}
+
+.soc-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.soc-hero-buttons a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.soc-quick-start {
+    padding: 0 1rem 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.soc-quick-start-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.soc-quick-start-actions a {
     text-decoration: none;
     cursor: pointer;
 }

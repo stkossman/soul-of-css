@@ -3,7 +3,7 @@
     "sass": "^1.90.0"
   },
   "name": "soul-of-css",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Soul of CSS is a CSS framework inspired by the aesthetics of Souls-like games.",
   "main": "dist/soc.css",
   "dependencies": {

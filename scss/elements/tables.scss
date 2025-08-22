@@ -1,0 +1,63 @@
+@use "../base/variables.scss" as *;
+@use "../base/color-palette.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.soc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: map-get($font-families, 'secondary');
+  font-size: 0.875rem;
+  color: $color-bone-white;
+  background-color: $color-shadow-black;
+
+  th, td {
+    padding: spacing('sm') spacing('md');
+    text-align: left;
+    border: 1px solid $color-border;
+  }
+
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+
+  th:last-child, td:last-child {
+    border-right: none;
+  }
+
+  tr:first-child th {
+    border-top: none;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  thead {
+    background-color: $color-void-black;
+    color: $color-brass;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+  }
+
+  // striped rows
+  &.is-striped tbody tr:nth-child(odd) {
+    background-color: $color-charcoal;
+  }
+
+  // hoverable
+  &.is-hoverable tbody tr:hover {
+    background-color: $color-ash-gray;
+    color: $color-bone-white;
+  }
+
+  // align
+  &.is-centered th,
+  &.is-centered td {
+    text-align: center;
+  }
+
+  &.is-right th,
+  &.is-right td {
+        text-align: right;
+  }
+}

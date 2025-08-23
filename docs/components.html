@@ -1,97 +1,139 @@
-<div class="soc-container-demo">
+<div x-data="{ activeTab: 'texts' }" class="soc-container-demo">
 
-    <!--texts-->
-    <div class="soc-container with-title" id="texts" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Texts</p>
-        <div class="h3-container">
-            <h3 class="soc-text is-primary">Primary</h3>
-            <h3 class="soc-text is-success">Success</h3>
-            <h3 class="soc-text is-warning">Warning</h3>
-            <h3 class="soc-text is-error">Error</h3>
-            <h3 class="soc-text is-soul">Soul</h3>
-            <h3 class="soc-text is-disabled">Disabled</h3>
-        </div>
+    <!-- tabs -->
+    <nav class="nav-tabs">
+        <button @click="activeTab = 'texts'" :class="{ 'is-active': activeTab === 'texts' }" class="soc-btn is-ghost">Texts</button>
+        <button @click="activeTab = 'buttons'" :class="{ 'is-active': activeTab === 'buttons' }" class="soc-btn is-ghost">Buttons</button>
+        <button @click="activeTab = 'legacy'" :class="{ 'is-active': activeTab === 'legacy' }" class="soc-btn is-ghost">Legacy</button>
+        <button @click="activeTab = 'inputs'" :class="{ 'is-active': activeTab === 'inputs' }" class="soc-btn is-ghost">Inputs</button>
+        <button @click="activeTab = 'textarea'" :class="{ 'is-active': activeTab === 'textarea' }" class="soc-btn is-ghost">Textarea</button>
+        <button @click="activeTab = 'containers'" :class="{ 'is-active': activeTab === 'containers' }" class="soc-btn is-ghost">Containers</button>
+        <button @click="activeTab = 'lists'" :class="{ 'is-active': activeTab === 'lists' }" class="soc-btn is-ghost">Lists</button>
+        <button @click="activeTab = 'progress'" :class="{ 'is-active': activeTab === 'progress' }" class="soc-btn is-ghost">Progress</button>
+        <button @click="activeTab = 'badges'" :class="{ 'is-active': activeTab === 'badges' }" class="soc-btn is-ghost">Badges</button>
+        <button @click="activeTab = 'tables'" :class="{ 'is-active': activeTab === 'tables' }" class="soc-btn is-ghost">Tables</button>
+        <button @click="activeTab = 'animations'" :class="{ 'is-active': activeTab === 'animations' }" class="soc-btn is-ghost">Animations</button>
+    </nav>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;h3 class="soc-text is-primary"&gt;Primary&lt;/h3&gt;
+    <!-- texts -->
+    <div x-show="activeTab === 'texts'">
+        <div class="soc-container with-title" id="texts" style="position: relative; padding-bottom: 4rem;">
+            <p class="title">Texts</p>
+            <div class="h3-container">
+                <h3 class="soc-text is-primary">Primary</h3>
+                <h3 class="soc-text is-success">Success</h3>
+                <h3 class="soc-text is-warning">Warning</h3>
+                <h3 class="soc-text is-error">Error</h3>
+                <h3 class="soc-text is-soul">Soul</h3>
+                <h3 class="soc-text is-disabled">Disabled</h3>
+            </div>
+
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;h3 class="soc-text is-primary"&gt;Primary&lt;/h3&gt;
 &lt;h3 class="soc-text is-success"&gt;Success&lt;/h3&gt;
 &lt;h3 class="soc-text is-warning"&gt;Warning&lt;/h3&gt;
 &lt;h3 class="soc-text is-error"&gt;Error&lt;/h3&gt;
 &lt;h3 class="soc-text is-disabled"&gt;Disabled&lt;/h3&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
-    <!--buttons-->
-    <div class="soc-container with-title" id="buttons" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Buttons</p>
-        <div class="h3-container">
-            <button class="soc-btn is-primary">Primary</button>
-            <button class="soc-btn is-secondary">Secondary</button>
-            <button class="soc-btn is-ghost">Ghost</button>
-            <button class="soc-btn is-danger">Danger</button>
-            <button class="soc-btn is-success">Success</button>
-        </div>
+    <!-- buttons -->
+    <div x-show="activeTab === 'buttons'">
+        <div class="soc-container with-title" id="buttons" style="position: relative; padding-bottom: 4rem;">
+            <p class="title">Buttons</p>
+            <div class="h3-container">
+                <button class="soc-btn is-primary">Primary</button>
+                <button class="soc-btn is-secondary">Secondary</button>
+                <button class="soc-btn is-ghost">Ghost</button>
+                <button class="soc-btn is-danger">Danger</button>
+                <button class="soc-btn is-success">Success</button>
+            </div>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;button class="soc-btn is-primary"&gt;Primary&lt;/button&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;button class="soc-btn is-primary"&gt;Primary&lt;/button&gt;
 &lt;button class="soc-btn is-secondary"&gt;Secondary&lt;/button&gt;
 &lt;button class="soc-btn is-ghost"&gt;Ghost&lt;/button&gt;
 &lt;button class="soc-btn is-danger"&gt;Danger&lt;/button&gt;
 &lt;button class="soc-btn is-success"&gt;Success&lt;/button&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
-    <!--legacy-->
-    <div class="soc-container with-title" id="legacy" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Legacy Elements</p>
-        <div class="h3-container">
-            <h3 class="soc-text is-bonfire">BONFIRE LIT</h3>
-            <h3 class="soc-text is-ember">EMBER RESTORED</h3>
-            <h3 class="soc-text is-heir">HEIR OF FIRE DESTROYED</h3>
-            <h3 class="soc-text is-death">YOU DIED</h3>
-        </div>
+    <!-- legacy -->
+    <div x-show="activeTab === 'legacy'">
+        <div class="soc-container with-title" id="legacy" style="position: relative; padding-bottom: 4rem;">
+            <p class="title">Legacy Elements</p>
+            <div class="h3-container">
+                <h3 class="soc-text is-bonfire">BONFIRE LIT</h3>
+                <h3 class="soc-text is-ember">EMBER RESTORED</h3>
+                <h3 class="soc-text is-heir">HEIR OF FIRE DESTROYED</h3>
+                <h3 class="soc-text is-death">YOU DIED</h3>
+            </div>
 
-        <div style="margin-top: 1rem;">
-            <button class="soc-btn is-legacy">OK</button>
-        </div>
+            <div style="margin-top: 1rem;">
+                <button class="soc-btn is-legacy">OK</button>
+            </div>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;h3 class="soc-text is-bonfire"&gt;Bonfire Lit&lt;/h3&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;h3 class="soc-text is-bonfire"&gt;Bonfire Lit&lt;/h3&gt;
 &lt;h3 class="soc-text is-ember"&gt;Ember Restored&lt;/h3&gt;
 &lt;h3 class="soc-text is-heir"&gt;Heir of Fire Destroyed&lt;/h3&gt;
 &lt;h3 class="soc-text is-death"&gt;YOU DIED&lt;/h3&gt;
 &lt;button class="soc-btn is-legacy"&gt;OK&lt;/button&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
-    <!--inputs-->
-    <div class="soc-container with-title" id="inputs" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Inputs</p>
+    <!-- inputs -->
+    <div x-show="activeTab === 'inputs'">
+        <div class="soc-container with-title" id="inputs" style="position: relative; padding-bottom: 4rem;">
+            <p class="title">Inputs</p>
 
-        <div class="soc-field">
-            <label for="default-input">Enter name</label>
-            <input type="text" id="default-input" class="soc-input is-default" placeholder="Ashen One">
-        </div>
+            <p class="title">Inputs</p>
 
-        <div class="soc-field">
-            <label for="success-input">.soc-input.is-success</label>
-            <input type="text" id="success-input" class="soc-input is-success" placeholder="Win">
-        </div>
+            <div class="soc-field">
+                <label for="default-input">Enter name</label>
+                <input type="text" id="default-input" class="soc-input is-default" placeholder="Ashen One">
+            </div>
 
-        <div class="soc-field">
-            <label for="warning-input">.soc-input.is-warning</label>
-            <input type="text" id="warning-input" class="soc-input is-warning" placeholder="Be careful">
-        </div>
+            <div class="soc-field">
+                <label for="success-input">.soc-input.is-success</label>
+                <input type="text" id="success-input" class="soc-input is-success" placeholder="Win">
+            </div>
 
-        <div class="soc-field">
-            <label for="error-input">.soc-input.is-error</label>
-            <input type="text" id="error-input" class="soc-input is-error" placeholder="Defeat">
-        </div>
+            <div class="soc-field">
+                <label for="warning-input">.soc-input.is-warning</label>
+                <input type="text" id="warning-input" class="soc-input is-warning" placeholder="Be careful">
+            </div>
 
-        <div class="soc-field">
-            <label for="disabled-input">.soc-input.is-disabled</label>
-            <input type="text" id="disabled-input" class="soc-input is-disabled" placeholder="Untouchable" disabled>
-        </div>
+            <div class="soc-field">
+                <label for="error-input">.soc-input.is-error</label>
+                <input type="text" id="error-input" class="soc-input is-error" placeholder="Defeat">
+            </div>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;div class="soc-field"&gt;
+            <div class="soc-field">
+                <label for="disabled-input">.soc-input.is-disabled</label>
+                <input type="text" id="disabled-input" class="soc-input is-disabled" placeholder="Untouchable" disabled>
+            </div>
+
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;div class="soc-field"&gt;
     &lt;label for="default-input"&gt;Enter name&lt;/label&gt;
     &lt;input type="text" id="default-input" class="soc-input is-default" placeholder="Ashen One"&gt;
 &lt;/div&gt;
@@ -115,55 +157,68 @@
     &lt;label for="disabled-input"&gt;.soc-input.is-disabled&lt;/label&gt;
     &lt;input type="text" id="disabled-input" class="soc-input is-disabled" placeholder="Untouchable" disabled&gt;
 &lt;/div&gt;</code></pre>
-
+            </div>
+        </div>
     </div>
 
-    <!--textarea-->
-    <div class="soc-container with-title" id="textarea" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Textarea</p>
+    <!-- textarea -->
+    <div x-show="activeTab === 'textarea'">
+        <div class="soc-container with-title" id="textarea" style="position: relative; padding-bottom: 4rem;">
+            <p class="title">Textarea</p>
 
-        <div class="soc-field">
-            <label for="textarea-example">.soc-textarea</label>
-            <textarea id="textarea-example" class="soc-textarea" placeholder="Write"></textarea>
-        </div>
+            <div class="soc-field">
+                <label for="textarea-example">.soc-textarea</label>
+                <textarea id="textarea-example" class="soc-textarea" placeholder="Write"></textarea>
+            </div>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;div class="soc-field"&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;div class="soc-field"&gt;
     &lt;label for="textarea-example"&gt;.soc-textarea&lt;/label&gt;
     &lt;textarea id="textarea-example" class="soc-textarea" placeholder="Write"&gt;/textarea&gt;
 &lt;/div&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
-    <!--containers-->
-    <div class="soc-container with-title with-hover" id="containers" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Containers</p>
+    <!-- containers -->
+    <div x-show="activeTab === 'containers'">
+        <div class="soc-container with-title" id="containers" style="position: relative; padding-bottom: 4rem;">
+            <p class="title">Containers</p>
 
-        <div class="soc-container with-title is-centered" style="margin-bottom: 1rem; margin-top: 1rem;">
-            <p class="title">Container.is-centered</p>
-            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
-        </div>
+            <div class="soc-container with-title is-centered" style="margin-bottom: 1rem; margin-top: 1rem;">
+                <p class="title">Container.is-centered</p>
+                <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+            </div>
 
-        <div class="soc-container with-title is-right" style="margin-bottom: 1rem;">
-            <p class="title">Container.is-right</p>
-            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
-        </div>
+            <div class="soc-container with-title is-right" style="margin-bottom: 1rem;">
+                <p class="title">Container.is-right</p>
+                <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+            </div>
 
-        <div class="soc-container with-title is-brass" style="margin-bottom: 1rem;">
-            <p class="title">Container.is-brass</p>
-            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
-        </div>
+            <div class="soc-container with-title is-brass" style="margin-bottom: 1rem;">
+                <p class="title">Container.is-brass</p>
+                <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+            </div>
 
-        <div class="soc-container with-title is-rounded" style="margin-bottom: 1rem;">
-            <p class="title">Container.is-rounded</p>
-            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
-        </div>
+            <div class="soc-container with-title is-rounded" style="margin-bottom: 1rem;">
+                <p class="title">Container.is-rounded</p>
+                <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+            </div>
 
-        <div class="soc-container" style="margin-bottom: 1rem;">
-            <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
-        </div>
+            <div class="soc-container" style="margin-bottom: 1rem;">
+                <p>As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.</p>
+            </div>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;div class="soc-container with-title is-centered"&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;div class="soc-container with-title is-centered"&gt;
     &lt;p class="title"&gt;Container.is-centered&lt;/p&gt;
     &lt;p&gt;As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.&lt;/p&gt;
 &lt;/div&gt;
@@ -186,51 +241,73 @@
 &lt;div class="soc-container"&gt;
     &lt;p&gt;As fires fade and the world falls into ruin, journey into a universe filled with more colossal enemies and environments.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
-    <!--lists-->
-    <div class="soc-container with-title" id="lists" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Lists</p>
-        <ul class="soc-list">
-            <li>Oh, are you lost on your journey? No matter</li>
-            <li>Today's lost are conquerors tomorrow</li>
-            <li>It only demonstrates the making of a champion</li>
-        </ul>
+    <!-- lists -->
+    <div x-show="activeTab === 'lists'">
+        <div class="soc-container with-title" id="lists" style="position: relative; padding-bottom: 4rem;">
+            <p class="title">Lists</p>
+            <ul class="soc-list">
+                <li>Oh, are you lost on your journey? No matter</li>
+                <li>Today's lost are conquerors tomorrow</li>
+                <li>It only demonstrates the making of a champion</li>
+            </ul>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;ul class="soc-list"&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;ul class="soc-list"&gt;
     &lt;li&gt;Oh, are you lost on your journey? No matter&lt;/li&gt;
     &lt;li&gt;Today's lost are conquerors tomorrow&lt;/li&gt;
     &lt;li&gt;It only demonstrates the making of a champion&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
-    <!--progress bars-->
-    <div class="soc-container with-title" id="progress" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Progress Bar</p>
-        <progress class="soc-progress" value="90" max="100"></progress>
+    <!-- Progress -->
+    <div x-show="activeTab === 'progress'">
+        <div class="soc-container with-title" id="progress" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+            <p class="title">Progress Bar</p>
+            <progress class="soc-progress" value="90" max="100"></progress>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;progress class="soc-progress" value="90" max="100"&gt;&lt;/progress&gt;</code></pre>
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;progress class="soc-progress" value="90" max="100"&gt;&lt;/progress&gt;</code></pre>
+            </div>
+
+        </div>
     </div>
 
     <!-- badges -->
-    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Badges</p>
+    <div x-show="activeTab === 'badges'">
+        <div class="soc-container with-title" id="badges" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+            <p class="title">Badges</p>
 
-        <span class="soc-badge soc-badge--lg is-primary">Primary</span>
-        <span class="soc-badge soc-badge--lg is-success">Success</span>
-        <span class="soc-badge soc-badge--lg is-warning">Warning</span>
-        <span class="soc-badge soc-badge--lg is-error">Error</span>
-        <span class="soc-badge soc-badge--lg is-info">Info</span>
-        <span class="soc-badge soc-badge--lg is-disabled">Disabled</span>
+            <span class="soc-badge soc-badge--lg is-primary">Primary</span>
+            <span class="soc-badge soc-badge--lg is-success">Success</span>
+            <span class="soc-badge soc-badge--lg is-warning">Warning</span>
+            <span class="soc-badge soc-badge--lg is-error">Error</span>
+            <span class="soc-badge soc-badge--lg is-info">Info</span>
+            <span class="soc-badge soc-badge--lg is-disabled">Disabled</span>
 
-        <span class="soc-badge soc-badge--lg is-ember">Ember</span>
-        <span class="soc-badge soc-badge--lg is-bonfire">Bonfire</span>
-        <span class="soc-badge soc-badge--lg is-death">Death</span>
+            <span class="soc-badge soc-badge--lg is-ember">Ember</span>
+            <span class="soc-badge soc-badge--lg is-bonfire">Bonfire</span>
+            <span class="soc-badge soc-badge--lg is-death">Death</span>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;span class="soc-badge soc-badge--lg is-primary"&gt;Primary&lt;/span&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;span class="soc-badge soc-badge--lg is-primary"&gt;Primary&lt;/span&gt;
 &lt;span class="soc-badge soc-badge--lg is-success"&gt;Success&lt;/span&gt;
 &lt;span class="soc-badge soc-badge--lg is-warning"&gt;Warning&lt;/span&gt;
 &lt;span class="soc-badge soc-badge--lg is-error"&gt;Error&lt;/span&gt;
@@ -240,38 +317,44 @@
 &lt;span class="soc-badge soc-badge--lg is-ember"&gt;Ember&lt;/span&gt;
 &lt;span class="soc-badge soc-badge--lg is-bonfire"&gt;Bonfire&lt;/span&gt;
 &lt;span class="soc-badge soc-badge--lg is-death"&gt;Death&lt;/span&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
     <!-- tables -->
-    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Tables</p>
+    <div x-show="activeTab === 'tables'">
+        <div class="soc-container with-title" id="tables" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+            <p class="title">Tables</p>
 
-        <span class="soc-text is-secondary">Available table classes</span>
-        <table class="soc-table is-striped is-hoverable is-centered">
-            <thead>
-            <tr>
-                <th>Class</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>is-striped</td>
-                <td>Striped rows</td>
-            </tr>
-            <tr>
-                <td>is-hoverable</td>
-                <td>Hoverable rows</td>
-            </tr>
-            <tr>
-                <td>is-centered & is-right</td>
-                <td>Content inside of tables is centered/on the right</td>
-            </tr>
-            </tbody>
-        </table>
+            <table class="soc-table is-striped is-hoverable is-centered">
+                <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>is-striped</td>
+                    <td>Striped rows</td>
+                </tr>
+                <tr>
+                    <td>is-hoverable</td>
+                    <td>Hoverable rows</td>
+                </tr>
+                <tr>
+                    <td>is-centered & is-right</td>
+                    <td>Content inside of tables is centered/on the right</td>
+                </tr>
+                </tbody>
+            </table>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;table class="soc-table is-striped is-hoverable is-centered"&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;table class="soc-table is-striped is-hoverable is-centered"&gt;
     &lt;thead&gt;
     &lt;tr&gt;
         &lt;th&gt;Class&lt;/th&gt;
@@ -293,21 +376,31 @@
     &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
+            </div>
+        </div>
     </div>
 
     <!-- animations -->
-    <div class="soc-container with-title" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
-        <p class="title">Animations</p>
+    <div x-show="activeTab === 'animations'">
+        <div class="soc-container with-title" id="animations" style="margin-bottom: 2rem; position: relative; padding-bottom: 4rem;">
+            <p class="title">Animations</p>
 
-        <div class="h3-container">
-            <p class="soc-text is-heir is-flicker">.is-flicker</p>
-            <p class="soc-text is-bonfire is-ghostly">.is-ghostly</p>
-        </div>
-        <button class="soc-btn soc-btn--sm is-primary is-whispering">.is-whispering</button>
+            <div class="h3-container">
+                <p class="soc-text is-heir is-flicker">.is-flicker</p>
+                <p class="soc-text is-bonfire is-ghostly">.is-ghostly</p>
+            </div>
+            <button class="soc-btn soc-btn--sm is-primary is-whispering">.is-whispering</button>
 
-        <button class="soc-btn soc-btn--sm is-ghost soc-code-toggle show-code-btn">Show code</button>
-        <pre class="soc-code-block"><code>&lt;p class="soc-text is-heir is-flicker"&gt;.is-flicker&lt;/p&gt;
+            <div x-data="{showCode: false}">
+                <button @click="showCode = !showCode" class="soc-btn soc-btn--sm is-ghost show-code-btn">
+                    <span x-text="showCode ? 'Hide code' : 'Show code'"></span>
+                </button>
+
+                <pre class="soc-code-block" x-show="showCode"><code>&lt;p class="soc-text is-heir is-flicker"&gt;.is-flicker&lt;/p&gt;
 &lt;p class="soc-text is-bonfire is-ghostly"&gt;.is-ghostly&lt;/p&gt;
 &lt;button class="soc-btn soc-btn--sm is-primary is-whispering"&gt;.is-whispering&lt;/button&gt;</code></pre>
+            </div>
+        </div>
     </div>
+
 </div>

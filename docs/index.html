@@ -10,9 +10,10 @@
     <link href="https://unpkg.com/soul-of-css@latest/dist/soc.css"  rel="stylesheet"/>
 <!--        <link rel="stylesheet" href="/dist/soc.css">-->
     <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body style="min-height:100vh;display:flex;flex-direction:column;">
 <header class="soc-docs-header">
     <div class="container">
         <div class="header-left">
@@ -40,7 +41,7 @@
     Loading...
 </div>
 
-<main id="main-content" hx-target="this" hx-swap="innerHTML">
+<main id="main-content" hx-target="this" hx-swap="innerHTML" style="flex:1 0 auto;">
     <div class="soc-hero">
         <div class="soc-hero-content">
             <h2 class="soc-text is-bonfire is-ghostly">BONFIRE LIT</h2>
@@ -60,12 +61,6 @@
             <pre class="soc-code-block" style="display: block"><code>&lt;link href="https://unpkg.com/soul-of-css@latest/dist/soc.css" rel="stylesheet"/&gt;</code></pre>
             <p>Or install via npm:</p>
             <pre class="soc-code-block" style="display: block"><code>npm install soul-of-css</code></pre>
-            <div class="soc-quick-start-actions">
-                <a
-                    hx-get="components.html" hx-target="#main-content" hx-push-url="true"
-                    class="soc-btn is-legacy" style="color: #f4f1e8;">View Components
-                </a>
-            </div>
         </div>
     </div>
 
@@ -73,21 +68,21 @@
         <h2 class="soc-text">Big Thanks & Author's Commentary</h2>
         <p>
             This framework would not be possible without a <a href="https://nostalgic-css.github.io/NES.css">NES.css</a> since it inspired me to create
-            similar framework but in another style.
+            a similar framework but in another style.
         </p>
         <p>
             For now, I did not manage to overcome and do better than <span style="color: #87ceeb;">NES.css</span>,
             <span style="color: #c0c0c0">(even this page is not that good compared to my other works)</span>
             but I'll try my best and will be updating this framework until
-            it satisfies me. Maybe it is not perfect nor good because of lack of my knowledge in SCSS, creating frameworks etc., but anyway it worthed a try.
+            it satisfies me. Maybe it is not perfect nor good because of lack of my knowledge in SCSS, creating frameworks, etc., but anyway it worthed a try.
             <span style="color: #87ceeb;">Also</span>, I know that this framework is not really useful, but I just wanted to create something
-            that would help me <span style="color: #87ceeb;">in first place</span> deal with my depression, and learn something new about CSS and SCSS.
+            that would help me <span style="color: #87ceeb;">in the first place</span> deal with my depression and learn something new about CSS and SCSS.
         </p>
         <p class="soc-text is-bonfire">Enjoy!</p>
     </div>
 </main>
 
-<footer class="soc-docs-footer">
+<footer class="soc-docs-footer" style="flex-shrink:0;">
     ©2025 Soul of CSS - <a href="https://github.com/stkossman">stkossman</a>
 </footer>
 

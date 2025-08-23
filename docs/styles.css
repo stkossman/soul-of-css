@@ -62,9 +62,18 @@ a {
     align-items: center;
 }
 
-.soc-docs-nav a {
+.soc-docs-nav .soc-link {
+    color: #f4f1e8 !important;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
     text-decoration: none;
-    cursor: pointer;
+    line-height: 1;
+}
+
+.soc-docs-nav .soc-link:hover,
+.soc-docs-nav .soc-link:focus {
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
 }
 
 .soc-hero {
@@ -197,18 +206,35 @@ a {
     color: #e8e0d0;
 }
 
-.nav-tabs {
+.nav-tabs-minimal {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 2rem;
     margin: 0 auto 2rem auto;
-    border-bottom: 2px solid var(--brass);
-    padding: 0.75rem 0 0.75rem 0;
-    background: rgba(26, 26, 26, 0.85);
-    border-radius: 1.5rem 1.5rem 0 0;
+    border-bottom: 1px solid #333;
+    padding: 0.75rem 0;
     max-width: 1200px;
+}
+
+.nav-tabs-minimal .nav-link {
+    color: #a0a0a0 !important;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.nav-tabs-minimal .nav-link:hover {
+    color: #e5e5e5 !important;
+    border-bottom-color: var(--brass);
+}
+
+.nav-tabs-minimal .nav-link.is-active {
+    color: var(--brass) !important;
+    border-bottom-color: var(--brass);
 }
 
 
